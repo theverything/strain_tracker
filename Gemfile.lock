@@ -14,6 +14,8 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
+    active_model_serializers (0.8.1)
+      activemodel (>= 3.0)
     activemodel (3.2.14)
       activesupport (= 3.2.14)
       builder (~> 3.0.0)
@@ -76,6 +78,9 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     hike (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.5)
     journey (1.0.4)
     jquery-rails (3.0.4)
@@ -92,6 +97,7 @@ GEM
     mime-types (1.24)
     mini_portile (0.5.1)
     multi_json (1.7.9)
+    multi_xml (0.5.5)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     pg (0.16.0)
@@ -196,6 +202,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   better_errors
   binding_of_caller
   capybara
@@ -203,6 +210,7 @@ DEPENDENCIES
   email_spec
   factory_girl (= 2.6.4)
   figaro
+  httparty
   jquery-rails
   launchy
   pg

@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'active_model_serializers'
 gem 'httparty'
+gem 'omniauth-facebook'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

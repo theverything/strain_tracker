@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130817182000) do
+ActiveRecord::Schema.define(:version => 20130817184638) do
+
+  create_table "smokeins", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "strain_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "strains", :force => true do |t|
     t.string   "name"
@@ -20,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20130817182000) do
     t.integer  "rating"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end

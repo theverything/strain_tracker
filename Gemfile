@@ -4,6 +4,7 @@ gem 'rails', '3.2.14'
 gem 'jquery-rails'
 gem 'pg'
 gem 'httparty'
+gem 'omniauth-facebook'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

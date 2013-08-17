@@ -1,11 +1,12 @@
 StrainTracker::Application.routes.draw do
   get "home/index"
-  root to: "home#index" 
-
+  root to: "home#index"
+  resources :strains, only: [:index, :show]
+  get "/search" => "strains#search"
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

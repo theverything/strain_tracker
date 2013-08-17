@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="large-6 large-centered columns">
+    <h1><%= @strain.name %></h1>
+    <p><%= @strain.abstract %></p>
+    <p><%= @strain.category %></p>
+    <div class="progress large-12 success round"><span class="meter" style="width: <%= @strain.rating * 10 %>%"></span></div>
+    <button class="large expand">Smoke In</button>
+  </div>
+</div>

@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.14'
 gem 'jquery-rails'
 gem 'pg'
+gem 'active_model_serializers'
 gem 'httparty'
 gem 'omniauth-facebook'
 

@@ -1,0 +1,38 @@
+.title1{
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: emCalc(36);
+}
+.title2{
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  font-size: emCalc(32);
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.facebook-image{
+  width: emCalc(250);
+  margin: emCalc(30) auto emCalc(10) auto;
+}
+.big-logo{
+  margin: emCalc(45) auto emCalc(25) auto;
+  width: emCalc(250);
+}
+.subtitle{
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  font-size: emCalc(18);
+  text-shadow: 0px 1px 1px #000;
+}
+.bottom{
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  font-size: emCalc(12);
+  text-shadow: 0px 1px 1px #000;
+}
+.container{
+  width: 90%;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}

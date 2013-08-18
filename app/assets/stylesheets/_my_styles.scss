@@ -23,7 +23,7 @@
 .bottom{
   font-family: 'Open Sans', sans-serif;
   color: #FFF;
-  font-size: emCalc(12);
+  font-size: emCalc(20);
   text-shadow: 0px 1px 1px #000;
 }
 .container{
@@ -182,7 +182,7 @@ a.trends-title,a.trends-title:visited,a.trends-title:hover{
 }
 .show-submit{
   border-radius: 10px;
-  background-color: #669933;  
+  background-color: #669933;
   box-shadow: 10px;
   text-transform: uppercase;
   width: 95%;
@@ -193,12 +193,13 @@ a.trends-title,a.trends-title:visited,a.trends-title:hover{
   border: #669933;
 
   &:hover{
-    background-color: darken(#669933,10%);    
+    background-color: darken(#669933,10%);
   }
 }
 .show-rating{
   padding: 5px 0 0 0;
 }
+<<<<<<< HEAD
 .show-sativa,.show-indica,.show-hybrid{
   padding: 7px 20px 7px 20px;
   border-radius: 10px;
@@ -217,3 +218,5 @@ a.trends-title,a.trends-title:visited,a.trends-title:hover{
 .show-hybrid {
   background-color: #993399;
 }
+=======
+>>>>>>> change bottom text size

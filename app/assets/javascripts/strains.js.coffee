@@ -5,7 +5,7 @@
 $('#search').on 'keyup', ->
   input = $('input[id=search]').val()
   $.ajax
-    url: "http://localhost:3000/search?s=#{input}",
+    url: "/search?s=#{input}",
     dataType: "json",
     success: ( results ) ->
       $('#results').text("")

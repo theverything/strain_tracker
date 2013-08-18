@@ -21,7 +21,7 @@ class StrainsController < ApplicationController
     @smokein = Smokein.new(params[:smokein])
     if @smokein.save
       flash[:notice] = "Thanks for smoking in."
-      redirect_to strains_path
+      redirect_to trends_path
     else
       flash[:alert] = "Oops something happened."
       render "show"

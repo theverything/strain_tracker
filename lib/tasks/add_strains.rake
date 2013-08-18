@@ -14,9 +14,23 @@ namespace :strains do
   task :add2 => :environment do
     uri = URI('http://www.leafly.com/api/strains')
     page = Net::HTTP.get(uri)
+    if page
+      puts "got page"
+    else
+      puts "something went wrong getting the page"
+    end
     json = JSON.parse(page)
+    if json
+      puts "got json"
+    else
+      puts "something went wrong getting the json"
+    end
     json.each do |strain|
-      Strain.create(name: strain['Name'], abstract: strain['Abstract'], category: strain['Category'], rating: strain['Rating'])
+      if Strain.create(name: strain['Name'], abstract: strain['Abstract'], category: strain['Category'], rating: strain['Rating'])
+        print "."
+      else
+        print "F"
+      end
     end
   end
 end

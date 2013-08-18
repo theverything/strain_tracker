@@ -3,6 +3,8 @@ StrainTracker::Application.routes.draw do
   root to: "home#index"
   resources :strains, only: [:index, :show]
   get "/search" => "strains#search"
+  get "/trends" => "strains#trends"
+
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'

@@ -22,7 +22,7 @@
   </head>
 
   <body>
-    <%= render 'layouts/nav' %>
+    <%= render 'layouts/nav' if @nav != false %>
 
     <%= yield %>
 

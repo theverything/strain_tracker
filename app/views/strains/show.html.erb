@@ -16,7 +16,7 @@
           <div class="show-hybrid">
             Hybrid
           </div>
-        <% end %>        
+        <% end %>
       </div>
       <p><%= @strain.abstract %></p>
     </div>
@@ -26,8 +26,8 @@
     </div>
     <div>
       <%= form_for @smokein, url: new_smokein_path do |f| %>
-        <%= f.hidden_field :strain_id, value: @strain.id%>
-        <%= f.hidden_field :user_id, value: current_user%>
+        <%= f.hidden_field :strain_id, value: @strain.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.submit "Smoke In", :disable_with => 'Thanks', class: "button show-submit" %>
       <% end %>
     </div>

@@ -8,8 +8,16 @@ class StrainsController < ApplicationController
   end
 
   def show
+    @title = "Strain"
     @strain = Strain.find(params[:id])
     @smokein = Smokein.new
+    if @strain.category == "Indica"
+      @category_image = "/assets/IndicaIconBig.png"
+      @category_name =  "Indica"
+    elsif @strain.category == "Sativa"
+      @category_image = "/assets/SativaIconBig.png"
+      @category_name = "Sativa"
+    end
   end
 
   def search

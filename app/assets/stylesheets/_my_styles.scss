@@ -1,13 +1,9 @@
 // Splash Page
 .title1{
-  font-family: 'Open Sans', sans-serif;
-  color: #FFF;
   text-transform: uppercase;
   font-size: emCalc(36);
 }
 .title2{
-  font-family: 'Open Sans', sans-serif;
-  color: #FFF;
   font-size: emCalc(32);
   text-transform: uppercase;
   font-weight: normal;
@@ -21,8 +17,6 @@
   width: emCalc(250);
 }
 .subtitle{
-  font-family: 'Open Sans', sans-serif;
-  color: #FFF;
   font-size: emCalc(18);
   text-shadow: 0px 1px 1px #000;
 }
@@ -51,6 +45,7 @@
   background-repeat: repeat-x;
   height: emCalc(57);
   width: 100%;
+  margin: 0 0 emCalc(30px) 0;
 }
 #head-logo{
   float: left;
@@ -100,7 +95,6 @@
 }
 // Trending
 .trend{
-  color: #FFF;
   border-bottom: 1px #666 solid;
   padding: 25px 20px 25px 20px;
   clear: both;
@@ -110,7 +104,6 @@
 }
 a.trends-title,a.trends-title:visited,a.trends-title:hover{
   margin: 0 0 0 0;
-  color: #FFF;
   text-transform: uppercase;
   font-size: emCalc(22);
   font-weight: bold;
@@ -130,7 +123,6 @@ a.trends-title,a.trends-title:visited,a.trends-title:hover{
   padding: 7px 20px 7px 20px;
   border-radius: 10px;
   margin: 20px 5px 15px 0;
-  color: white;
   font-size: emCalc(20px);
   display: inline-block;
   font-weight: bold;
@@ -158,4 +150,50 @@ a.trends-title,a.trends-title:visited,a.trends-title:hover{
 .trend-meter{
   background-color: #669933;
   height: 10px;
+}
+
+// show CSS
+.show-title{
+  font-size: emCalc(26);
+}
+.show-category-icon{
+  width: emCalc(140);
+  float: left;
+  margin: 0 emCalc(20) 0 emCalc(20);
+}
+.show-content{
+  font-size: emCalc(14);
+  float: left;
+  max-width: 50%;
+}
+.show-progress{
+  background-color: #FFF;
+  height: 20px;
+  width: 95%;
+}
+.show-meter{
+  background-color: #669933;
+  height: 20px;
+}
+.tooltip{
+  margin-left: 40px;
+}
+.show-submit{
+  border-radius: 10px;
+  background-color: #669933;  
+  box-shadow: 10px;
+  text-transform: uppercase;
+  width: 95%;
+  margin: 20px 0 0 0;
+  padding: 20px 10px 20px 10px;
+  cursor: pointer;
+  font-size: emCalc(30);
+  border: #669933;
+
+  &:hover{
+    background-color: darken(#669933,10%);    
+  }
+}
+.show-rating{
+  padding: 5px 0 0 0;
 }

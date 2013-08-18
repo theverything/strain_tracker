@@ -52,8 +52,8 @@ $em-base: 16 !default;
 $default-float: left;
 
 $body-bg: #333;
-// $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-color: #FFF;
+$body-font-family: 'Open Sans', sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -1215,10 +1215,10 @@ $alert-bottom-margin: 0;
 // $has-tip-font-color-hover: $primary-color;
 // $has-tip-cursor-type: help;
 
-// $tooltip-padding: emCalc(8);
-// $tooltip-bg: #000;
+$tooltip-padding: emCalc(10) emCalc(14) emCalc(10) emCalc(14);
+$tooltip-bg: #669933;
 // $tooltip-font-size: emCalc(15);
-// $tooltip-font-weight: bold;
+$tooltip-font-weight: normal;
 // $tooltip-font-color: #fff;
 // $tooltip-line-height: 1.3;
 // $tooltip-close-font-size: emCalc(10);

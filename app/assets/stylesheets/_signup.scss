@@ -1,0 +1,12 @@
+#signup {
+  background: image-url("BigWeedBackground.png") fixed no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  input[type=submit].button {
+    background-color: #669933;
+    border: darken(#669933, 10%);
+  }
+}

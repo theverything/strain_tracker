@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="row">
+    <div class="large-6 columns">
+      <div class="row collapse">
+        <%= form_for @signup do |f| %>
+          <div class="small-10 columns">
+            <%= f.text_field :email, placeholder: "john@doe.com" %>
+          </div>
+          <div class="small-2 columns">
+            <%= f.submit "Sign Up", :disable_with => 'Signing Up...', class: "button postfix radius" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

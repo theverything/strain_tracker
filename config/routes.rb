@@ -1,10 +1,15 @@
 StrainTracker::Application.routes.draw do
+  get "signups/index"
+
   get "home/index"
   root to: "home#index"
   resources :strains, only: [:index, :show]
   get "/search" => "strains#search"
   get "/trends" => "strains#trends", as: :trends
   post "/smokein" => "strains#smokein", as: :new_smokein
+  # root to: "signups#index"
+  get "/signup" => "signups#index", as: :signups
+  post "/signup" => "signups#create"
 
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')

@@ -21,7 +21,7 @@ class StrainsController < ApplicationController
     @smokein = Smokein.new(params[:smokein])
     if @smokein.save
       flash[:notice] = "Thanks for smoking in."
-      redirect_to strains_path
+      redirect_to trends_path
     else
       flash[:alert] = "Oops something happened."
       render "show"
@@ -32,7 +32,6 @@ class StrainsController < ApplicationController
     now = Time.now
     yesterday = Time.now - 1.day
     @title = "Trending"
-    time = Time.now
     @trends = Strain.joins(:smokeins).group("strains.id").where(created_at: yesterday..now).order("count(smokeins.strain_id)").limit(3).reverse
   end
 end

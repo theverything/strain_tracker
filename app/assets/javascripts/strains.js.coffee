@@ -11,4 +11,7 @@ $ ->
       success: ( results ) ->
         $('#results').text("")
         $.each results.strains, ->
-          $('#results').append("<a href='/strains/#{this.id}'><div class='result'><span class='#{this.category.toLowerCase()}'>#{this.category.toUpperCase()}</span><span class='name'>#{this.name.toUpperCase()}</span><span class='rating'>#{this.rating}/10</span></div></a>")
+          $('#results').append("<div class='result'><a href='/strains/#{this.id}'><span class='#{this.category.toLowerCase()}'>#{this.category.toUpperCase()}</span><span class='name'>#{this.name.toUpperCase()}</span><span class='rating'>#{this.rating}/10</span></a></div>")
+
+$ ->
+  $('#strain-profile').animate({ left: 0 }, { duration: "slow" });

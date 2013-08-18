@@ -1,13 +1,41 @@
-#search {
-  margin-bottom: 0;
+#strain-profile {
+  position: relative;
+  left: -110%;
+}
 
+#search-container {
+  background-color: black;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 20px 0;
+}
+
+.alert-box {
+  text-align: center;
+  a.close {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
+
+input#search {
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+input[type=search] {
+  padding: 0;
 }
 
 .result {
   background-color: #333;
   padding: 30px 15px;
-  border-top: white 1px solid;
+  border-bottom: #666 1px solid;
   font-family: 'Open Sans', sans-serif;
+  &:last-child {
+    border-bottom: 0;
+  }
   .rating {
     float: right;
     color: #66CC66;
@@ -37,11 +65,11 @@ div.result span {
 
   &.indica {
     @extend .category;
-    background-color: #993399;
+    background-color: #666699;
   }
 
   &.hybrid {
     @extend .category;
-    background-color: #666699;
+    background-color: #993399;
   }
 }

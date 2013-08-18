@@ -2,6 +2,7 @@ class StrainsController < ApplicationController
   before_filter :authenticate
 
   def index
+    @title = "Search"
     @strains = Strain.all
     respond_to do |format|
       format.html

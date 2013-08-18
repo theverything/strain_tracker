@@ -113,11 +113,11 @@ a.trends-title,a.trends-title:visited,a.trends-title:hover{
 .trends-content{
   float: left;
   padding: 20px 0 0 0;
-  max-width: 40%;
-  min-width: emCalc(180px);
+  width: 45%;
 }
 .medals{
-  width: 150px;
+  max-width: 150px;
+  width: 50%;
   margin: 0 20px 0 0;
   float: left;
 }
@@ -159,14 +159,15 @@ a.trends-title,a.trends-title:visited,a.trends-title:hover{
   font-size: emCalc(26);
 }
 .show-category-icon{
-  width: emCalc(140);
+  max-width: emCalc(140);
+  width: 40%;
   float: left;
   margin: 0 emCalc(20) 0 emCalc(20);
 }
 .show-content{
   font-size: emCalc(14);
   float: left;
-  max-width: 50%;
+  width: 50%;
 }
 .show-progress{
   background-color: #FFF;

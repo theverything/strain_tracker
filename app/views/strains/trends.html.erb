@@ -1,3 +1,40 @@
-<%= @trends[0].strain.try(:name) if @trends[0].present? %>
-<%= @trends[1].strain.try(:name) if @trends[1].present? %>
-<%= @trends[2].strain.try(:name) if @trends[2].present? %>
+<div>
+  <% n = 1 %>
+  <% @trends.each do |trend| %>
+    <div class="trend">
+      <%  if n == 1
+            medal = "GoldenMedal.png"
+            text = "1st Place"
+          elsif n == 2
+            medal = "SilverMedal.png"
+            text = "2nd Place"
+          else
+            medal = "BronzeMedal.png"
+            text = "3rd Place"
+          end
+      %>
+      <%= image_tag("/assets/" + medal, alt: text, class: "medals") %>
+      <div class="trends-content">
+        <%= link_to trend.strain.name, strain_path(trend.strain_id), class: "trends-title" %>
+        <% if trend.strain.category == "Indica" %>
+          <div class="trend-indica">
+             <%= image_tag("/assets/IndicaIcon.png", class: "category-icon") %>Indica
+          </div>
+        <% elsif trend.strain.category == "Sativa" %>
+          <div class="trend-sativa">
+            <%= image_tag("/assets/SativaIcon.png", class: "category-icon") %>
+            Sativa
+          </div>
+        <% else %>
+          <div class="trend-hybrid">
+            <%= image_tag("/assets/HybridIcon.png", class: "category-icon") %>
+            Hybrid
+          </div>
+        <% end %>
+        <div class="trend-progress"><div class="trend-meter" style="width: <%= trend.strain.rating * 10 %>%"></div></div>
+   </div>
+      <p class="clear"></p>
+    </div>
+    <% n += 1 %>
+  <% end %>
+</div>

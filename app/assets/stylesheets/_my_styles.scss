@@ -48,5 +48,73 @@
   text-transform: uppercase;
   text-align: center;
 }
+.clear{
+  clear: both;
+}
 
 // Trending
+.top-bar{
+  background: image-url("NavBarGradient.png");
+  background-repeat: repeat-x;
+  height: emCalc(55);
+}
+.trend{
+  color: #FFF;
+  border-bottom: 1px #666 solid;
+  padding: 25px 20px 25px 20px;
+  clear: both;
+}
+.trend:last-child{
+ border-bottom: 0;  
+}
+a.trends-title,a.trends-title:visited,a.trends-title:hover{
+  margin: 0 0 0 0;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: emCalc(22);
+  font-weight: bold;
+}
+.trends-content{
+  float: left;  
+  padding: 20px 0 0 0;
+  max-width: 50%;
+  min-width: emCalc(180px);
+}
+.medals{
+  width: 150px;
+  margin: 0 20px 0 0;
+  float: left;
+}
+.trend-sativa,.trend-indica,.trend-hybrid{
+  padding: 7px 20px 7px 20px;
+  border-radius: 10px;
+  margin: 20px 5px 15px 0;
+  color: white;
+  font-size: emCalc(20px);
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+.trend-sativa {
+  background-color: #993333;
+}
+.trend-indica {
+  background-color: #666699;
+}
+.trend-hybrid {
+  background-color: #993399;
+}
+.category-icon{
+  margin-right: 10px;
+  width: 25px;
+}
+.trend-progress{
+  background-color: #FFF;
+  height: 10px;
+  width: 95%;
+}
+.trend-meter{
+  background-color: #669933;
+  height: 10px;
+}

@@ -1,7 +1,4 @@
-html,body {
-  color: white;
-}
-
+// Splash Page
 .title1{
   font-family: 'Open Sans', sans-serif;
   color: #FFF;
@@ -43,3 +40,13 @@ html,body {
   background: image-url("WeedBackground-Mobile.jpg") 50% center;
   max-width: 640px;
 }
+
+// All Pages But Splash Page
+.nav-title{
+  color: #669933;
+  font-size: emCalc(24);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+// Trending

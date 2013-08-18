@@ -1,23 +1,18 @@
 <div class="contain-to-grid">
   <nav class="top-bar">
-    <ul class="title-area">
+    <ul class="title-area small-1 columns">
       <li class="name">
-        <h1><%= link_to "Strain Tracker", root_path %></h1>
+        <h1><%= link_to image_tag("/assets/ST-Logo.png", alt: "ST"), root_path %></h1>
       </li>
-      <li class="name">
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
-    <ul class="title-area">
-      <li class="name">
+    <span class="small-9 columns center">
+      <h1 class="nav-title">
         <%= @title %>
-      </li>
-    </ul>
-    <section class="top-bar-section">
-      <ul class="right">
-        <li class="divider"></li>
-        <li><%= link_to "Search", strains_path %></li>
-        <li class="divider"></li>
+      </h1>
+    </span>
+    <section class="top-bar-section small-1 columns">
+      <ul>
+        <li><%= link_to image_tag("/assets/Search-Icon.png", alt: "Search"), strains_path %></li>
       </ul>
     </section>
   </nav>

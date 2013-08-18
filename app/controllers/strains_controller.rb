@@ -23,7 +23,7 @@ class StrainsController < ApplicationController
       flash[:notice] = "Thanks for smoking in."
       redirect_to strains_path
     else
-      flash[:notice] = "Thanks for smoking in."
+      flash[:alert] = "Oops something happened."
       render "show"
     end
   end

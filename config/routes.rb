@@ -3,7 +3,7 @@ StrainTracker::Application.routes.draw do
   root to: "home#index"
   resources :strains, only: [:index, :show]
   get "/search" => "strains#search"
-  get "/trends" => "strains#trends"
+  get "/trends" => "strains#trends", as: :trends
   post "/smokein" => "strains#smokein", as: :new_smokein
 
   match 'auth/:provider/callback', to: 'sessions#create'

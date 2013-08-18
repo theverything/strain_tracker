@@ -33,6 +33,6 @@ class StrainsController < ApplicationController
     yesterday = Time.now - 1.day
     @title = "Trending"
     time = Time.now
-    @trends = Smokein.group("smokeins.id").where(created_at: yesterday..now).order("count(smokeins.id)").limit(3)
+    @trends = Strain.joins(:smokeins).group("strains.id").where(created_at: yesterday..now).order("count(smokeins.strain_id)").limit(3).reverse
   end
 end

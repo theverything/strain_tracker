@@ -15,12 +15,12 @@
       %>
       <%= image_tag("/assets/" + medal, alt: text, class: "medals") %>
       <div class="trends-content">
-        <%= link_to trend.strain.name, strain_path(trend.strain_id), class: "trends-title" %>
-        <% if trend.strain.category == "Indica" %>
+        <%= link_to trend.name, strain_path(trend.id), class: "trends-title" %>
+        <% if trend.category == "Indica" %>
           <div class="trend-indica">
              <%= image_tag("/assets/IndicaIcon.png", class: "category-icon") %>Indica
           </div>
-        <% elsif trend.strain.category == "Sativa" %>
+        <% elsif trend.category == "Sativa" %>
           <div class="trend-sativa">
             <%= image_tag("/assets/SativaIcon.png", class: "category-icon") %>
             Sativa
@@ -31,7 +31,7 @@
             Hybrid
           </div>
         <% end %>
-        <div class="trend-progress"><div class="trend-meter" style="width: <%= trend.strain.rating * 10 %>%"></div></div>
+        <div class="trend-progress"><div class="trend-meter" style="width: <%= trend.rating * 10 %>%"></div></div>
    </div>
       <p class="clear"></p>
     </div>

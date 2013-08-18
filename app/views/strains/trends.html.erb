@@ -1,1 +1,3 @@
-This is the trending page!!
+<% @trends.each do |trend| %>
+  <%= trend.strain.name %><br />
+<% end %>

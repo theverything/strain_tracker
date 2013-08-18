@@ -3,6 +3,21 @@
     <%= image_tag(@category_image, alt: @category_name, class: "show-category-icon") %>
     <div class="show-content">
       <h1 class="show-title"><%= @strain.name %></h1>
+      <div class="show-category">
+        <% if @strain.category == "Indica" %>
+          <div class="show-indica">
+            Indica
+          </div>
+        <% elsif @strain.category == "Sativa" %>
+          <div class="show-sativa">
+            Sativa
+          </div>
+        <% else %>
+          <div class="show-hybrid">
+            Hybrid
+          </div>
+        <% end %>        
+      </div>
       <p><%= @strain.abstract %></p>
     </div>
     <p class="clear"></p>

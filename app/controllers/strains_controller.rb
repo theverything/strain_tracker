@@ -1,4 +1,6 @@
 class StrainsController < ApplicationController
+  before_filter :authenticate
+
   def index
     @strains = Strain.all
     respond_to do |format|
@@ -42,5 +44,13 @@ class StrainsController < ApplicationController
     @title = "Trending"
     time = Time.now
     @trends = Strain.joins(:smokeins).group("strains.id").where(created_at: yesterday..now).order("count(smokeins.strain_id) DESC").limit(3)
+  end
+
+  private
+
+  def authenticate
+    unless current_user
+      redirect_to root_path
+    end
   end
 end

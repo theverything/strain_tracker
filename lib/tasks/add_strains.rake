@@ -26,11 +26,13 @@ namespace :strains do
       puts "something went wrong getting the json"
     end
     json.each do |strain|
-      if Strain.create(name: strain['Name'], abstract: strain['Abstract'], category: strain['Category'], rating: strain['Rating'])
+      strain = Strain.new(name: strain['Name'], abstract: strain['Abstract'], category: strain['Category'], rating: strain['Rating'])
+      if strain.save
         print "."
       else
         print "F"
       end
     end
+    puts "done"
   end
 end

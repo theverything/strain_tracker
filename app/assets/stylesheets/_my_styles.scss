@@ -42,22 +42,35 @@
 }
 
 // All Pages But Splash Page
-.nav-title{
+.clear{
+  clear: both;
+}
+#head-nav{
+  padding: 3px 0 3px 0;
+  background: image-url("NavBarGradient.png");
+  background-repeat: repeat-x;
+  height: emCalc(50);
+  width: 100%;
+}
+#head-logo{
+  float: left;
+  margin: 5px 0 0 15px;
+  width: 30px;
+}
+#head-search{
+  float: right;
+  margin: 5px 15px 0 0;
+  width: 30px;
+}
+#head-title{
   color: #669933;
   font-size: emCalc(24);
   text-transform: uppercase;
   text-align: center;
-}
-.clear{
-  clear: both;
+  margin: 10px 0 0 0;
 }
 
 // Trending
-.top-bar{
-  background: image-url("NavBarGradient.png");
-  background-repeat: repeat-x;
-  height: emCalc(55);
-}
 .trend{
   color: #FFF;
   border-bottom: 1px #666 solid;

@@ -20,6 +20,9 @@ class StrainsController < ApplicationController
     elsif @strain.category == "Sativa"
       @category_image = "/assets/SativaIconBig.png"
       @category_name = "Sativa"
+    else @strain.category == "Hybrid"
+      @category_image = "/assets/HybridIconBig.png"
+      @category_name = "Hybrid"
     end
   end
 

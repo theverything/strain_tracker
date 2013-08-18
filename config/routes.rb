@@ -4,6 +4,7 @@ StrainTracker::Application.routes.draw do
   resources :strains, only: [:index, :show]
   get "/search" => "strains#search"
   get "/trends" => "strains#trends"
+  post "/smokein" => "strains#smokein", as: :new_smokein
 
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')

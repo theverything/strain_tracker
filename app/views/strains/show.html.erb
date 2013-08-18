@@ -4,6 +4,14 @@
     <p><%= @strain.abstract %></p>
     <p><%= @strain.category %></p>
     <div class="progress large-12 success round"><span class="meter" style="width: <%= @strain.rating * 10 %>%"></span></div>
-    <button class="large expand">Smoke In</button>
+    <% if current_user %>
+      <%= form_for @smokein, url: new_smokein_path do |f| %>
+        <%= f.hidden_field :strain_id, value: @strain.id%>
+        <%= f.hidden_field :user_id, value: current_user%>
+        <%= f.submit "Smoke In", :disable_with => 'Thanks', class: "button" %>
+      <% end %>
+    <% else %>
+      Log In
+    <% end %>
   </div>
 </div>

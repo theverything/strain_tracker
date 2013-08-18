@@ -9,11 +9,23 @@ class StrainsController < ApplicationController
 
   def show
     @strain = Strain.find(params[:id])
+    @smokein = Smokein.new
   end
 
   def search
     @strains = Strain.find_by_fuzzy_name(params[:s], :limit => 5)
     render json: @strains
+  end
+
+  def smokein
+    @smokein = Smokein.new(params[:smokein])
+    if @smokein.save
+      flash[:notice] = "Thanks for smoking in."
+      redirect_to strains_path
+    else
+      flash[:alert] = "Oops something happened."
+      render "show"
+    end
   end
 
   def trends

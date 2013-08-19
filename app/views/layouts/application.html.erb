@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title>Strain Tracker</title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -23,7 +23,7 @@
 
   <body>
     <%= render partial: 'layouts/flash', locals: { flash: flash } %>
-    <%= render 'layouts/nav' if @nav != false %>
+    <%= render 'layouts/nav' %>
 
     <%= yield %>
 

@@ -1,42 +1,27 @@
 <div class="row">
-  <% n = 1 %>
   <% @trends.each do |trend| %>
-    <div class="trend">
-      <%  if n == 1
-            medal = "GoldenMedal.png"
-            text = "1st Place"
-          elsif n == 2
-            medal = "SilverMedal.png"
-            text = "2nd Place"
-          else
-            medal = "BronzeMedal.png"
-            text = "3rd Place"
-          end
-      %>
-      <%= link_to strain_path(trend.id), class: "trends-title" do %>
-      <%= image_tag("/assets/" + medal, alt: text, class: "medals") %>
-      <div class="trends-content">
-        <span class="trend-title"><%= trend.name %></span><br>
-        <% if trend.category == "Indica" %>
-          <div class="trend-indica">
-             <%= image_tag("/assets/IndicaIcon.png", class: "category-icon") %>Indica
+    <div class="trend row">
+      <%= link_to strain_path(trend.id) do %>
+        <div class="small-3 columns">
+        <%= image_tag("/assets/#{ cycle("Golden", "Silver", "Bronze") }Medal.png", alt: "#{(@trends.index(trend) + 1).ordinalize} Place") %>
+        </div>
+        <div class="small-9 columns">
+          <div class="trend-name">
+            <%= trend.name %>
           </div>
-        <% elsif trend.category == "Sativa" %>
-          <div class="trend-sativa">
-            <%= image_tag("/assets/SativaIcon.png", class: "category-icon") %>
-            Sativa
+          <div class="trend-cat">
+            <div class="trend-<%= trend.category.downcase %>">
+              <%= image_tag("/assets/#{trend.category}Icon.png", class: "category-icon") %>
+              <%= trend.category.downcase %>
+            </div>
           </div>
-        <% else %>
-          <div class="trend-hybrid">
-            <%= image_tag("/assets/HybridIcon.png", class: "category-icon") %>
-            Hybrid
+          <div class="trend-rate">
+            <%= trend.rating %>/10
           </div>
-        <% end %><br />
-        <div class="trend-progress"><div class="trend-meter" style="width: <%= trend.rating * 10 %>%"></div></div>
-   </div>
-   <% end %>
-      <p class="clear"></p>
+          <div class="arrow-down"></div>
+          <div class="trend-progress"><div class="trend-meter" style="width: <%= trend.rating * 10 %>%"></div></div>
+        </div>
+      <% end %>
     </div>
-    <% n += 1 %>
   <% end %>
 </div>

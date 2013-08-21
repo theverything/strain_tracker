@@ -97,8 +97,7 @@
 // Trending
 .trend{
   border-bottom: 1px #666 solid;
-  padding: 25px 20px 25px 20px;
-  clear: both;
+  padding: emCalc(20) 0;
 }
 .trend:last-child{
  border-bottom: 0;
@@ -121,10 +120,43 @@ a.trends-title,a.trends-title:visited,a.trends-title:hover{
   margin: 0 20px 0 0;
   float: left;
 }
+.trend a {
+  color: #FFF
+}
+.trend-name {
+  font-size: emCalc(20px);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: emCalc(20);
+}
+.trend-cat {
+  margin-bottom: emCalc(20);
+}
+.trend-rate {
+  text-align: center;
+  font-size: emCalc(20);
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #669933;
+  width: emCalc(50);
+  border-radius: $global-radius;
+  padding: emCalc(10) 0;
+  // margin-bottom: emCalc(20);
+}
+.arrow-down {
+  margin-bottom: emCalc(10);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #669933;
+  position: relative;
+  left: 10px;
+}
 .trend-sativa,.trend-indica,.trend-hybrid{
-  padding: 7px 20px 7px 20px;
+  padding: 7px 20px;
   border-radius: 10px;
-  margin: 20px 5px 15px 0;
+  // margin: 20px 5px 15px 0;
   font-size: emCalc(20px);
   display: inline-block;
   font-weight: bold;

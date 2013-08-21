@@ -1,42 +1,46 @@
 <div class="row">
-  <% n = 1 %>
-  <% @trends.each do |trend| %>
-    <div class="trend">
-      <%  if n == 1
-            medal = "GoldenMedal.png"
-            text = "1st Place"
-          elsif n == 2
-            medal = "SilverMedal.png"
-            text = "2nd Place"
-          else
-            medal = "BronzeMedal.png"
-            text = "3rd Place"
-          end
-      %>
-      <%= link_to strain_path(trend.id), class: "trends-title" do %>
-      <%= image_tag("/assets/" + medal, alt: text, class: "medals") %>
-      <div class="trends-content">
-        <span class="trend-title"><%= trend.name %></span><br>
-        <% if trend.category == "Indica" %>
-          <div class="trend-indica">
-             <%= image_tag("/assets/IndicaIcon.png", class: "category-icon") %>Indica
-          </div>
-        <% elsif trend.category == "Sativa" %>
-          <div class="trend-sativa">
-            <%= image_tag("/assets/SativaIcon.png", class: "category-icon") %>
-            Sativa
-          </div>
-        <% else %>
-          <div class="trend-hybrid">
-            <%= image_tag("/assets/HybridIcon.png", class: "category-icon") %>
-            Hybrid
-          </div>
-        <% end %><br />
-        <div class="trend-progress"><div class="trend-meter" style="width: <%= trend.rating * 10 %>%"></div></div>
-   </div>
-   <% end %>
-      <p class="clear"></p>
-    </div>
-    <% n += 1 %>
-  <% end %>
+  <div class="large-6 large-centered columns">
+    <% n = 1 %>
+    <% @trends.each do |trend| %>
+      <div class="trend row">
+        <%  if n == 1
+              medal = "GoldenMedal.png"
+              text = "1st Place"
+            elsif n == 2
+              medal = "SilverMedal.png"
+              text = "2nd Place"
+            else
+              medal = "BronzeMedal.png"
+              text = "3rd Place"
+            end
+        %>
+        <%= link_to strain_path(trend.id), class: "trends-title" do %>
+        <div class="large-6 columns">
+          <%= image_tag("/assets/" + medal, alt: text, class: "medals") %>
+        </div>
+        <div class="large-6 trends-content">
+          <span class="trend-title"><%= trend.name %></span><br>
+          <% if trend.category == "Indica" %>
+            <div class="trend-indica">
+               <%= image_tag("/assets/IndicaIcon.png", class: "category-icon") %>Indica
+            </div>
+          <% elsif trend.category == "Sativa" %>
+            <div class="trend-sativa">
+              <%= image_tag("/assets/SativaIcon.png", class: "category-icon") %>
+              Sativa
+            </div>
+          <% else %>
+            <div class="trend-hybrid">
+              <%= image_tag("/assets/HybridIcon.png", class: "category-icon") %>
+              Hybrid
+            </div>
+          <% end %><br />
+          <div class="trend-progress"><div class="trend-meter" style="width: <%= trend.rating * 10 %>%"></div></div>
+     </div>
+     <% end %>
+        <p class="clear"></p>
+      </div>
+      <% n += 1 %>
+    <% end %>
+  </div>
 </div>

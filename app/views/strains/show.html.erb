@@ -1,35 +1,39 @@
 <div id="strain-profile" class="row">
   <div class="large-6 large-centered columns">
-    <%= image_tag(@category_image, alt: @category_name, class: "show-category-icon") %>
-    <div class="show-content">
-      <h1 class="show-title"><%= @strain.name %></h1>
-      <div class="show-category">
-        <% if @strain.category == "Indica" %>
-          <div class="show-indica">
-            Indica
-          </div>
-        <% elsif @strain.category == "Sativa" %>
-          <div class="show-sativa">
-            Sativa
-          </div>
-        <% else %>
-          <div class="show-hybrid">
-            Hybrid
-          </div>
+    <div class="row">
+      <div class="small-5 columns">
+        <%= image_tag(@category_image, alt: @category_name, class: "show-category-icon") %>
+      </div>
+      <div class="show-content small-7 columns">
+        <h1 class="show-title"><%= @strain.name %></h1>
+        <div class="show-category">
+          <% if @strain.category == "Indica" %>
+            <div class="show-indica">
+              Indica
+            </div>
+          <% elsif @strain.category == "Sativa" %>
+            <div class="show-sativa">
+              Sativa
+            </div>
+          <% else %>
+            <div class="show-hybrid">
+              Hybrid
+            </div>
+          <% end %>
+        </div>
+        <p><%= @strain.abstract %></p>
+      </div>
+      <p class="clear"></p>
+      <div class="show-rating tip-top" title="<%= @strain.rating %>/10" data-width="60px" data-tooltip="true">
+        <div class="show-progress"><div class="show-meter" style="width: <%= @strain.rating * 10 %>%"></div></div>
+      </div>
+      <div>
+        <%= form_for @smokein, url: new_smokein_path do |f| %>
+          <%= f.hidden_field :strain_id, value: @strain.id %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.submit "Smoke In", :disable_with => 'Thanks', class: "button show-submit" %>
         <% end %>
       </div>
-      <p><%= @strain.abstract %></p>
-    </div>
-    <p class="clear"></p>
-    <div class="show-rating tip-top" title="<%= @strain.rating %>/10" data-width="60px" data-tooltip="true">
-      <div class="show-progress"><div class="show-meter" style="width: <%= @strain.rating * 10 %>%"></div></div>
-    </div>
-    <div>
-      <%= form_for @smokein, url: new_smokein_path do |f| %>
-        <%= f.hidden_field :strain_id, value: @strain.id %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
-        <%= f.submit "Smoke In", :disable_with => 'Thanks', class: "button show-submit" %>
-      <% end %>
     </div>
   </div>
 </div>

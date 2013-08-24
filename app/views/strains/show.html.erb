@@ -24,15 +24,17 @@
         <p><%= @strain.abstract %></p>
       </div>
       <p class="clear"></p>
-      <div class="show-rating tip-top" title="<%= @strain.rating %>/10" data-width="60px" data-tooltip="true">
-        <div class="show-progress"><div class="show-meter" style="width: <%= @strain.rating * 10 %>%"></div></div>
-      </div>
-      <div>
-        <%= form_for @smokein, url: new_smokein_path do |f| %>
-          <%= f.hidden_field :strain_id, value: @strain.id %>
-          <%= f.hidden_field :user_id, value: current_user.id %>
-          <%= f.submit "Smoke In", :disable_with => 'Thanks', class: "button show-submit" %>
-        <% end %>
+      <div class="small-12 columns">
+        <div class="show-progress">
+          <div class="show-meter" style="width: <%= @strain.rating * 10 %>%"></div>
+        </div>
+        <div>
+          <%= form_for @smokein, url: new_smokein_path do |f| %>
+            <%= f.hidden_field :strain_id, value: @strain.id %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.submit "Smoke In", :disable_with => 'Thanks', class: "button show-submit" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

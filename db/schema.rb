@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130818193719) do
+ActiveRecord::Schema.define(:version => 20130824073431) do
 
   create_table "signups", :force => true do |t|
     t.string   "email"
@@ -50,9 +50,10 @@ ActiveRecord::Schema.define(:version => 20130818193719) do
     t.string   "email"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.string   "uid"
+    t.boolean  "first",            :default => false
   end
 
 end

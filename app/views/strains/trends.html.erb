@@ -3,11 +3,12 @@
     <div class="trend row">
       <%= link_to strain_path(trend.id) do %>
         <div class="small-3 columns">
-        <%= image_tag("/assets/#{ cycle("Golden", "Silver", "Bronze") }Medal.png", alt: "#{(@trends.index(trend) + 1).ordinalize} Place") %>
+        <span id="first-stop">
+        <%= image_tag("/assets/#{ cycle("Golden", "Silver", "Bronze") }Medal.png", alt: "#{(@trends.index(trend) + 1).ordinalize} Place") %></span>
         </div>
         <div class="small-9 columns">
           <div class="trend-name">
-            <%= trend.name %>
+            <span id="second-stop"><%= trend.name %></span>
           </div>
           <div class="trend-cat">
             <div class="trend-<%= trend.category.downcase %>">
@@ -25,3 +26,23 @@
     </div>
   <% end %>
 </div>
+<ul data-joyride id="joyride-start" class="joyride-tip-guide">
+  <li data-id="first-stop">
+    <p>Here are todays most smoked strains!</p>
+  </li>
+  <li data-id="second-stop">
+    <p>Click on a strain to "SMOKE IN".</p>
+  </li>
+  <li data-options="cookieMonster: true; cookieName: 'joyride'; nextButton: false" class="custom-styling">
+    <p>
+      Don't see the strain your smoking?
+    </p>
+    <p>Click on the 
+      <%= image_tag("/assets/Search-Icon.png", alt: "Search") %>
+      to search more strains!
+    </p>
+  </li>
+<!--   <li data-id="fourth-stop" data-options="nextButton: false">
+    <p>Click up here to search for more strains!</p>
+  </li>
+ --></ul>
